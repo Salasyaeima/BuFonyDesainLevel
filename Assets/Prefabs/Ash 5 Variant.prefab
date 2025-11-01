@@ -1,0 +1,142 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &238389903240267117
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 56390873803200018, guid: 396e4e2bcb4c3374c90c240769020c51,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 372576159907598003, guid: 396e4e2bcb4c3374c90c240769020c51,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 588863873198932700, guid: 396e4e2bcb4c3374c90c240769020c51,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1421619516289957130, guid: 396e4e2bcb4c3374c90c240769020c51,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2699056531477903565, guid: 396e4e2bcb4c3374c90c240769020c51,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4139145693212648163, guid: 396e4e2bcb4c3374c90c240769020c51,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4221344652962875859, guid: 396e4e2bcb4c3374c90c240769020c51,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4921752447715801993, guid: 396e4e2bcb4c3374c90c240769020c51,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5493435580513855819, guid: 396e4e2bcb4c3374c90c240769020c51,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5751650423762240479, guid: 396e4e2bcb4c3374c90c240769020c51,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5780545108056687457, guid: 396e4e2bcb4c3374c90c240769020c51,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16.691353
+      objectReference: {fileID: 0}
+    - target: {fileID: 5780545108056687457, guid: 396e4e2bcb4c3374c90c240769020c51,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.008735524
+      objectReference: {fileID: 0}
+    - target: {fileID: 5780545108056687457, guid: 396e4e2bcb4c3374c90c240769020c51,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -20.117237
+      objectReference: {fileID: 0}
+    - target: {fileID: 5780545108056687457, guid: 396e4e2bcb4c3374c90c240769020c51,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5780545108056687457, guid: 396e4e2bcb4c3374c90c240769020c51,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5780545108056687457, guid: 396e4e2bcb4c3374c90c240769020c51,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5780545108056687457, guid: 396e4e2bcb4c3374c90c240769020c51,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5780545108056687457, guid: 396e4e2bcb4c3374c90c240769020c51,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5780545108056687457, guid: 396e4e2bcb4c3374c90c240769020c51,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5780545108056687457, guid: 396e4e2bcb4c3374c90c240769020c51,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6873279228363003784, guid: 396e4e2bcb4c3374c90c240769020c51,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7572050766472468175, guid: 396e4e2bcb4c3374c90c240769020c51,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8185793832496569501, guid: 396e4e2bcb4c3374c90c240769020c51,
+        type: 3}
+      propertyPath: m_Name
+      value: Ash 5 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8185793832496569501, guid: 396e4e2bcb4c3374c90c240769020c51,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890759397330022026, guid: 396e4e2bcb4c3374c90c240769020c51,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1498497985014858369, guid: 396e4e2bcb4c3374c90c240769020c51, type: 3}
+    - {fileID: 2115005923947283815, guid: 396e4e2bcb4c3374c90c240769020c51, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 396e4e2bcb4c3374c90c240769020c51, type: 3}
