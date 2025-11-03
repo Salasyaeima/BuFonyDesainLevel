@@ -14,6 +14,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace CodeMonkey.KeyDoorSystemCM {
 
@@ -24,6 +25,7 @@ namespace CodeMonkey.KeyDoorSystemCM {
 
         public event EventHandler OnDoorKeyAdded;
         public event EventHandler OnDoorKeyUsed;
+        public UnityEvent OnEnableGameObject;
 
         [Header("Key Holder")]
         [Tooltip("List of Keys currently being held")]
@@ -35,6 +37,7 @@ namespace CodeMonkey.KeyDoorSystemCM {
                 doorKeyHoldingList.Add(doorKey.key);
                 doorKey.DestroySelf();
                 OnDoorKeyAdded?.Invoke(this, EventArgs.Empty);
+                OnEnableGameObject.Invoke();
             }
 
             DoorLock doorLock = collider.GetComponent<DoorLock>();

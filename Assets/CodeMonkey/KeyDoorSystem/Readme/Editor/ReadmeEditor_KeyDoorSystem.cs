@@ -5,18 +5,22 @@ using UnityEditor;
 using System;
 using System.IO;
 using System.Reflection;
+using Unity;
 
-namespace CodeMonkey.KeyDoorSystemCM {
+namespace CodeMonkey.KeyDoorSystemCM
+{
 
     [CustomEditor(typeof(Readme_KeyDoorSystem))]
     [InitializeOnLoad]
-    public class ReadmeEditor_KeyDoorSystem : Editor {
+    public class ReadmeEditor_KeyDoorSystem : Editor
+    {
 
 
         private static float kSpace = 16f;
 
 
-        protected override void OnHeaderGUI() {
+        protected override void OnHeaderGUI()
+        {
             var readme = (Readme_KeyDoorSystem)target;
             Init();
 
@@ -31,26 +35,34 @@ namespace CodeMonkey.KeyDoorSystemCM {
             GUILayout.Label(readme.title, HeaderStyle);
         }
 
-        public override void OnInspectorGUI() {
+        public override void OnInspectorGUI()
+        {
             var readme = (Readme_KeyDoorSystem)target;
             Init();
 
-            foreach (var section in readme.sections) {
-                if (!string.IsNullOrEmpty(section.heading)) {
+            foreach (var section in readme.sections)
+            {
+                if (!string.IsNullOrEmpty(section.heading))
+                {
                     GUILayout.Label(section.heading, HeadingStyle);
                 }
-                if (section.textLines != null) {
-                    foreach (var textLine in section.textLines) {
-                        if (!string.IsNullOrEmpty(textLine)) {
+                if (section.textLines != null)
+                {
+                    foreach (var textLine in section.textLines)
+                    {
+                        if (!string.IsNullOrEmpty(textLine))
+                        {
                             string sectionText = textLine;
                             sectionText = sectionText.Replace("\\n", "\n");
                             GUILayout.Label(sectionText, BodyStyleSmall);
                         }
                     }
                 }
-                if (!string.IsNullOrEmpty(section.linkText)) {
+                if (!string.IsNullOrEmpty(section.linkText))
+                {
                     GUILayout.Space(kSpace / 2);
-                    if (LinkLabel(new GUIContent(section.linkText))) {
+                    if (LinkLabel(new GUIContent(section.linkText)))
+                    {
                         Application.OpenURL(section.url);
                     }
                 }
@@ -79,7 +91,8 @@ namespace CodeMonkey.KeyDoorSystemCM {
         GUIStyle BodyStyleSmall { get { return m_BodyStyleSmall; } }
         [SerializeField] GUIStyle m_BodyStyleSmall;
 
-        void Init() {
+        void Init()
+        {
             if (m_Initialized)
                 return;
             m_BodyStyle = new GUIStyle(EditorStyles.label);
@@ -110,7 +123,8 @@ namespace CodeMonkey.KeyDoorSystemCM {
             m_Initialized = true;
         }
 
-        bool LinkLabel(GUIContent label, params GUILayoutOption[] options) {
+        bool LinkLabel(GUIContent label, params GUILayoutOption[] options)
+        {
             var position = GUILayoutUtility.GetRect(label, LinkStyle, options);
 
             Handles.BeginGUI();
