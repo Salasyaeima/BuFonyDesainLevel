@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.Events;
+
 public class TargetScript : MonoBehaviour {
 
-	public UnityEvent OnDisableGameObject;
-	public UnityEvent OnActivateGameObject;
 	float randomTime;
 	bool routineStarted = false;
 
@@ -35,11 +33,8 @@ public class TargetScript : MonoBehaviour {
 		//If the target is hit
 		if (isHit == true) 
 		{
-			if (routineStarted == false)
+			if (routineStarted == false) 
 			{
-				OnDisableGameObject.Invoke();
-				OnActivateGameObject.Invoke();
-				return;
 				//Animate the target "down"
 				gameObject.GetComponent<Animation>().clip = targetDown;
 				gameObject.GetComponent<Animation>().Play();

@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: 4d054211e09870a468801f3a8e8fa8e1
+  productGUID: 554b9dc7ec425814e9184cc93748297e
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -78,7 +78,7 @@ PlayerSettings:
   androidMinimumWindowHeight: 300
   androidFullscreenMode: 1
   androidAutoRotationBehavior: 1
-  androidPredictiveBackSupport: 0
+  androidPredictiveBackSupport: 1
   androidApplicationEntry: 2
   defaultIsNativeResolution: 1
   macRetinaSupport: 1
@@ -143,8 +143,7 @@ PlayerSettings:
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
   bundleVersion: 4.0.0
-  preloadedAssets:
-  - {fileID: 11400000, guid: 9eb07e2d669e9c94e9d7d3c782a916f7, type: 2}
+  preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -386,10 +385,7 @@ PlayerSettings:
       m_Height: 36
       m_Kind: 0
       m_SubKind: 
-  m_BuildTargetBatching:
-  - m_BuildTarget: Standalone
-    m_StaticBatching: 1
-    m_DynamicBatching: 0
+  m_BuildTargetBatching: []
   m_BuildTargetShaderSettings: []
   m_BuildTargetGraphicsJobs:
   - m_BuildTarget: MacStandaloneSupport
@@ -437,9 +433,6 @@ PlayerSettings:
     m_Automatic: 1
   - m_BuildTarget: AndroidPlayer
     m_APIs: 0b000000
-    m_Automatic: 0
-  - m_BuildTarget: WindowsStandaloneSupport
-    m_APIs: 0200000012000000
     m_Automatic: 0
   m_BuildTargetVRSettings: []
   m_DefaultShaderChunkSizeInMB: 16
@@ -724,24 +717,24 @@ PlayerSettings:
   webWasm2023: 0
   webEnableSubmoduleStrippingCompatibility: 0
   scriptingDefineSymbols:
-    Android: CROSS_PLATFORM_INPUT;MOBILE_INPUT;UNITY_POST_PROCESSING_STACK_V2;CC_TOOLS
-    EmbeddedLinux: UNITY_POST_PROCESSING_STACK_V2;CC_TOOLS
-    GameCoreScarlett: UNITY_POST_PROCESSING_STACK_V2;CC_TOOLS
-    GameCoreXboxOne: UNITY_POST_PROCESSING_STACK_V2;CC_TOOLS
-    Kepler: UNITY_POST_PROCESSING_STACK_V2;CC_TOOLS
-    LinuxHeadlessSimulation: UNITY_POST_PROCESSING_STACK_V2;CC_TOOLS
-    Nintendo Switch: UNITY_POST_PROCESSING_STACK_V2;CC_TOOLS
-    PS4: UNITY_POST_PROCESSING_STACK_V2;CC_TOOLS
-    PS5: UNITY_POST_PROCESSING_STACK_V2;CC_TOOLS
-    QNX: UNITY_POST_PROCESSING_STACK_V2;CC_TOOLS
-    ReservedCFE: UNITY_POST_PROCESSING_STACK_V2;CC_TOOLS
-    Standalone: CROSS_PLATFORM_INPUT;UNITY_POST_PROCESSING_STACK_V2;ODIN_INSPECTOR;ODIN_INSPECTOR_3;CC_TOOLS
-    VisionOS: UNITY_POST_PROCESSING_STACK_V2;CC_TOOLS
-    WebGL: UNITY_POST_PROCESSING_STACK_V2;CC_TOOLS
-    Windows Store Apps: MOBILE_INPUT;UNITY_POST_PROCESSING_STACK_V2;CC_TOOLS
-    XboxOne: UNITY_POST_PROCESSING_STACK_V2;CC_TOOLS
-    iPhone: CROSS_PLATFORM_INPUT;MOBILE_INPUT;CC_TOOLS
-    tvOS: UNITY_POST_PROCESSING_STACK_V2;CC_TOOLS
+    Android: CROSS_PLATFORM_INPUT;MOBILE_INPUT;UNITY_POST_PROCESSING_STACK_V2
+    EmbeddedLinux: UNITY_POST_PROCESSING_STACK_V2
+    GameCoreScarlett: UNITY_POST_PROCESSING_STACK_V2
+    GameCoreXboxOne: UNITY_POST_PROCESSING_STACK_V2
+    Kepler: UNITY_POST_PROCESSING_STACK_V2
+    LinuxHeadlessSimulation: UNITY_POST_PROCESSING_STACK_V2
+    Nintendo Switch: UNITY_POST_PROCESSING_STACK_V2
+    PS4: UNITY_POST_PROCESSING_STACK_V2
+    PS5: UNITY_POST_PROCESSING_STACK_V2
+    QNX: UNITY_POST_PROCESSING_STACK_V2
+    ReservedCFE: UNITY_POST_PROCESSING_STACK_V2
+    Standalone: CROSS_PLATFORM_INPUT;UNITY_POST_PROCESSING_STACK_V2;ODIN_INSPECTOR;ODIN_INSPECTOR_3
+    VisionOS: UNITY_POST_PROCESSING_STACK_V2
+    WebGL: UNITY_POST_PROCESSING_STACK_V2
+    Windows Store Apps: MOBILE_INPUT;UNITY_POST_PROCESSING_STACK_V2
+    XboxOne: UNITY_POST_PROCESSING_STACK_V2
+    iPhone: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    tvOS: UNITY_POST_PROCESSING_STACK_V2
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
@@ -754,6 +747,7 @@ PlayerSettings:
     EmbeddedLinux: 1
     GameCoreScarlett: 1
     GameCoreXboxOne: 1
+    Kepler: 1
     Nintendo Switch: 1
     PS4: 1
     PS5: 1
@@ -777,16 +771,16 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Bu Fony Desain Level
-  metroPackageVersion: 
+  metroPackageName: BuFonyDesainLevel
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Bu Fony Desain Level
+  metroApplicationDescription: BuFonyDesainLevel
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Bu Fony Desain Level
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0

@@ -2,10 +2,8 @@
 
 using UnityEngine;
 
-
 namespace InfimaGames.LowPolyShooterPack
 {
-
     /// <summary>
     /// Magazine.
     /// </summary>
@@ -14,7 +12,7 @@ namespace InfimaGames.LowPolyShooterPack
         #region FIELDS SERIALIZED
 
         [Header("Settings")]
-
+        
         [Tooltip("Total Ammunition.")]
         [SerializeField]
         private int ammunitionTotal = 10;
@@ -37,11 +35,6 @@ namespace InfimaGames.LowPolyShooterPack
         /// Sprite.
         /// </summary>
         public override Sprite GetSprite() => sprite;
-
-        public void addAmmo(int Ammo)
-        {
-            ammunitionTotal += Ammo; 
-        }
 
         #endregion
     }
