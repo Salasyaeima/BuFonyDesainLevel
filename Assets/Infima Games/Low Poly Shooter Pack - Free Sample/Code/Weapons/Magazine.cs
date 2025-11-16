@@ -10,32 +10,25 @@ namespace InfimaGames.LowPolyShooterPack
     public class Magazine : MagazineBehaviour
     {
         #region FIELDS SERIALIZED
-
         [Header("Settings")]
-        
-        [Tooltip("Total Ammunition.")]
+        [Tooltip("Total Ammunition capacity in magazine.")]
         [SerializeField]
-        private int ammunitionTotal = 10;
+        private int ammunitionTotal = 30;
+
+        [Tooltip("Tipe amunisi yang digunakan magazine ini")]
+        [SerializeField]
+        private AmmunitionType ammunitionType = AmmunitionType.Rifle;
 
         [Header("Interface")]
-
         [Tooltip("Interface Sprite.")]
         [SerializeField]
         private Sprite sprite;
-
         #endregion
 
         #region GETTERS
-
-        /// <summary>
-        /// Ammunition Total.
-        /// </summary>
         public override int GetAmmunitionTotal() => ammunitionTotal;
-        /// <summary>
-        /// Sprite.
-        /// </summary>
         public override Sprite GetSprite() => sprite;
-
+        public override AmmunitionType GetAmmunitionType() => ammunitionType;
         #endregion
     }
 }

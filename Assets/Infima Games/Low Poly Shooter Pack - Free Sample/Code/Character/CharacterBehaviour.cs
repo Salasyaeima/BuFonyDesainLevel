@@ -10,7 +10,8 @@ namespace InfimaGames.LowPolyShooterPack
     public abstract class CharacterBehaviour : MonoBehaviour
     {
         #region UNITY
-
+        // BARU: Getter untuk ammunition inventory
+        public abstract AmmunitionInventory GetAmmunitionInventory();
         /// <summary>
         /// Awake.
         /// </summary>
@@ -88,11 +89,13 @@ namespace InfimaGames.LowPolyShooterPack
         /// <summary>
         /// Fills the character's equipped weapon's ammunition by a certain amount, or fully if set to -1.
         /// </summary>
+        
+        // UPDATED: FillAmmunition tidak dipakai lagi, tapi kept for compatibility
+        [System.Obsolete("Use AmmunitionInventory system instead")]
         public abstract void FillAmmunition(int amount);
-
-        /// <summary>
-        /// Sets the equipped weapon's magazine to be active or inactive!
-        /// </summary>
+        
+        // BARU: Method untuk handle reload complete dari animation event
+        public abstract void ReloadComplete();
         public abstract void SetActiveMagazine(int active);
         
         /// <summary>

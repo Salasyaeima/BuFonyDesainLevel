@@ -89,6 +89,8 @@ namespace InfimaGames.LowPolyShooterPack
         /// </summary>
         public abstract bool HasAmmunition();
 
+        public abstract bool CanReload();
+
         /// <summary>
         /// Returns true if the weapon is full of ammunition.
         /// </summary>

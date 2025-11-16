@@ -10,7 +10,8 @@ namespace InfimaGames.LowPolyShooterPack
 	public class CharacterAnimationEventHandler : MonoBehaviour
 	{
 		#region FIELDS
-
+        // BARU: Return ammunition inventory
+        
 		/// <summary>
         /// Character Component Reference.
         /// </summary>
@@ -39,17 +40,25 @@ namespace InfimaGames.LowPolyShooterPack
 			if(playerCharacter != null)
 				playerCharacter.EjectCasing();
 		}
-
+        private void OnReloadComplete()
+        {
+            if(playerCharacter != null)
+                playerCharacter.ReloadComplete();
+        }
 		/// <summary>
 		/// Fills the character's equipped weapon's ammunition by a certain amount, or fully if set to 0. This function is called
 		/// from a Animation Event.
 		/// </summary>
-		private void OnAmmunitionFill(int amount = 0)
-		{
-			//Notify the character.
-			if(playerCharacter != null)
-				playerCharacter.FillAmmunition(amount);
-		}
+        [System.Obsolete("Use OnReloadComplete() instead")]
+        private void OnAmmunitionFill(int amount = 0)
+        {
+            Debug.LogWarning("OnAmmunitionFill is deprecated. Please update animation to use OnReloadComplete()");
+            
+            // Fallback untuk compatibility
+            if(playerCharacter != null)
+                playerCharacter.ReloadComplete();
+        }
+
 		/// <summary>
 		/// Sets the character's knife active value. This function is called from an Animation Event.
 		/// </summary>
