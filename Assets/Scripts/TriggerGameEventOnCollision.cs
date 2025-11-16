@@ -14,6 +14,8 @@ public class TriggerGameEventOnCollision : MonoBehaviour
             OnAddObject.Invoke(); // Memanggil semua listener
             OnEnableGameObject.Invoke();
             OnDisableGameObject.Invoke();
+
+            Destroy(this);
                                     
         }
     }
