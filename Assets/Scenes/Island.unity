@@ -8143,7 +8143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &178509327
 Transform:
   m_ObjectHideFlags: 0
@@ -35751,7 +35751,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0a8313775db2f8e45aaa193e5ac1e59c, type: 2}
+  - {fileID: 2100000, guid: 52473ff5a95f9f34daff7c899de05347, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -46634,7 +46634,7 @@ PrefabInstance:
     - target: {fileID: 5583920262903234863, guid: b77544d5bba6af34cacdc40cc70764a3,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5583920262903234863, guid: b77544d5bba6af34cacdc40cc70764a3,
         type: 3}
@@ -86946,6 +86946,7 @@ GameObject:
   - component: {fileID: 1604707039}
   - component: {fileID: 1604707041}
   - component: {fileID: 1604707040}
+  - component: {fileID: 1604707042}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -87178,6 +87179,28 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!95 &1604707042
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1604707033}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c92961369609564a868ef1e84525d9b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!43 &1608683114
 Mesh:
   m_ObjectHideFlags: 0
