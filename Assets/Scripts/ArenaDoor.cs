@@ -13,31 +13,39 @@ namespace InfimaGames.LowPolyShooterPack
         [SerializeField]
         private bool startLocked = false;
         
+        [Tooltip("Auto-close door setelah player keluar?")]
+        [SerializeField]
+        private bool autoClose = true;
+        
+        [Header("Animation")]
+        [Tooltip("Animator component (auto-assigned jika null)")]
+        [SerializeField]
+        private Animator doorAnimator;
+        
+        [Tooltip("Nama trigger untuk open animation")]
+        [SerializeField]
+        private string openTriggerName = "Open";
+        
+        [Tooltip("Nama trigger untuk close animation")]
+        [SerializeField]
+        private string closeTriggerName = "Close";
+        
         [Header("Visual")]
-        [Tooltip("Door mesh/model")]
-        [SerializeField]
-        private GameObject doorObject;
-        
-        [Tooltip("Material saat locked")]
-        [SerializeField]
-        private Material lockedMaterial;
-        
-        [Tooltip("Material saat unlocked")]
-        [SerializeField]
-        private Material unlockedMaterial;
-        
         [Tooltip("Locked indicator (particle, light, dll)")]
         [SerializeField]
         private GameObject lockedIndicator;
         
-        [Header("Animation")]
-        [Tooltip("Open position offset")]
+        [Tooltip("Material saat locked (optional)")]
         [SerializeField]
-        private Vector3 openPositionOffset = new Vector3(0, 3, 0);
+        private Material lockedMaterial;
         
-        [Tooltip("Open speed")]
+        [Tooltip("Material saat unlocked (optional)")]
         [SerializeField]
-        private float openSpeed = 2f;
+        private Material unlockedMaterial;
+        
+        [Tooltip("Door renderer untuk change material (optional)")]
+        [SerializeField]
+        private Renderer doorRenderer;
         
         [Header("Audio")]
         [SerializeField]
@@ -47,7 +55,17 @@ namespace InfimaGames.LowPolyShooterPack
         private AudioClip unlockSound;
         
         [SerializeField]
+        private AudioClip openSound;
+        
+        [SerializeField]
+        private AudioClip closeSound;
+        
+        [SerializeField]
         private AudioClip lockedAttemptSound; // Suara saat coba buka pintu yang locked
+        
+        [Header("Debug")]
+        [SerializeField]
+        private bool showDebugLogs = false;
         
         #endregion
         
@@ -55,9 +73,7 @@ namespace InfimaGames.LowPolyShooterPack
         
         private bool isLocked;
         private bool isOpen = false;
-        private Vector3 closedPosition;
-        private Vector3 openPosition;
-        private Renderer doorRenderer;
+        private AudioSource audioSource;
         
         #endregion
         
@@ -72,40 +88,41 @@ namespace InfimaGames.LowPolyShooterPack
         
         private void Awake()
         {
-            closedPosition = transform.position;
-            openPosition = closedPosition + openPositionOffset;
-            
-            if (doorObject != null)
+            // Auto-assign animator jika tidak diset
+            if (doorAnimator == null)
             {
-                doorRenderer = doorObject.GetComponent<Renderer>();
+                doorAnimator = GetComponent<Animator>();
+                
+                if (doorAnimator == null)
+                {
+                    Debug.LogWarning($"ArenaDoor {gameObject.name}: No Animator found!");
+                }
+            }
+            
+            // Get or add AudioSource
+            audioSource = GetComponent<AudioSource>();
+            if (audioSource == null)
+            {
+                audioSource = gameObject.AddComponent<AudioSource>();
+                audioSource.playOnAwake = false;
+                audioSource.spatialBlend = 1f; // 3D sound
             }
         }
         
         private void Start()
         {
+            // Set initial state
             SetLocked(startLocked);
-        }
-        
-        private void Update()
-        {
-            // Animate door opening/closing
-            if (!isLocked)
-            {
-                Vector3 targetPosition = isOpen ? openPosition : closedPosition;
-                transform.position = Vector3.Lerp(
-                    transform.position, 
-                    targetPosition, 
-                    Time.deltaTime * openSpeed
-                );
-            }
         }
         
         private void OnTriggerEnter(Collider other)
         {
             // Check if player
-            CharacterBehaviour character = other.GetComponent<CharacterBehaviour>();
-            if (character == null)
+            if (!other.CompareTag("Player"))
                 return;
+            
+            if (showDebugLogs)
+                Debug.Log($"ArenaDoor {gameObject.name}: Player entered trigger");
             
             // Try to open door
             TryOpen();
@@ -114,12 +131,14 @@ namespace InfimaGames.LowPolyShooterPack
         private void OnTriggerExit(Collider other)
         {
             // Check if player
-            CharacterBehaviour character = other.GetComponent<CharacterBehaviour>();
-            if (character == null)
+            if (!other.CompareTag("Player"))
                 return;
             
-            // Close door when player leaves
-            if (!isLocked)
+            if (showDebugLogs)
+                Debug.Log($"ArenaDoor {gameObject.name}: Player exited trigger");
+            
+            // Auto-close door when player leaves
+            if (autoClose && !isLocked && isOpen)
             {
                 Close();
             }
@@ -131,6 +150,7 @@ namespace InfimaGames.LowPolyShooterPack
         
         /// <summary>
         /// Set door locked state
+        /// Dipanggil dari ArenaManager
         /// </summary>
         public void SetLocked(bool locked)
         {
@@ -143,18 +163,22 @@ namespace InfimaGames.LowPolyShooterPack
             if (locked)
             {
                 PlaySound(lockSound);
-                Debug.Log($"ArenaDoor {gameObject.name}: Locked!");
+                
+                // Force close door jika di-lock
+                if (isOpen)
+                {
+                    Close();
+                }
+                
+                if (showDebugLogs)
+                    Debug.Log($"ArenaDoor {gameObject.name}: Locked!");
             }
             else
             {
                 PlaySound(unlockSound);
-                Debug.Log($"ArenaDoor {gameObject.name}: Unlocked!");
-            }
-            
-            // Close door if locked
-            if (locked)
-            {
-                Close();
+                
+                if (showDebugLogs)
+                    Debug.Log($"ArenaDoor {gameObject.name}: Unlocked!");
             }
         }
         
@@ -167,9 +191,13 @@ namespace InfimaGames.LowPolyShooterPack
             {
                 // Locked! Play feedback
                 PlaySound(lockedAttemptSound);
-                Debug.Log($"ArenaDoor {gameObject.name}: Cannot open, door is locked!");
                 
-                // Bisa tambahkan visual feedback (shake, flash, dll)
+                if (showDebugLogs)
+                    Debug.Log($"ArenaDoor {gameObject.name}: Cannot open, door is locked!");
+                
+                // Bisa tambahkan visual feedback (shake animation)
+                // doorAnimator.SetTrigger("Shake");
+                
                 return;
             }
             
@@ -178,27 +206,60 @@ namespace InfimaGames.LowPolyShooterPack
         }
         
         /// <summary>
-        /// Force open door
+        /// Open door (play open animation)
         /// </summary>
         public void Open()
         {
-            if (isOpen || isLocked)
+            if (isOpen || isLocked || doorAnimator == null)
                 return;
             
             isOpen = true;
-            Debug.Log($"ArenaDoor {gameObject.name}: Opening...");
+            
+            // Trigger open animation
+            doorAnimator.SetTrigger(openTriggerName);
+            
+            // Play sound
+            PlaySound(openSound);
+            
+            if (showDebugLogs)
+                Debug.Log($"ArenaDoor {gameObject.name}: Opening...");
         }
         
         /// <summary>
-        /// Close door
+        /// Close door (play close animation)
         /// </summary>
         public void Close()
         {
-            if (!isOpen)
+            if (!isOpen || doorAnimator == null)
                 return;
             
             isOpen = false;
-            Debug.Log($"ArenaDoor {gameObject.name}: Closing...");
+            
+            // Trigger close animation
+            doorAnimator.SetTrigger(closeTriggerName);
+            
+            // Play sound
+            PlaySound(closeSound);
+            
+            if (showDebugLogs)
+                Debug.Log($"ArenaDoor {gameObject.name}: Closing...");
+        }
+        
+        /// <summary>
+        /// Force open door (ignore lock)
+        /// </summary>
+        public void ForceOpen()
+        {
+            isLocked = false;
+            Open();
+        }
+        
+        /// <summary>
+        /// Force close door (ignore lock)
+        /// </summary>
+        public void ForceClose()
+        {
+            Close();
         }
         
         #endregion
@@ -207,7 +268,7 @@ namespace InfimaGames.LowPolyShooterPack
         
         private void UpdateVisual()
         {
-            // Update material
+            // Update material (optional)
             if (doorRenderer != null)
             {
                 if (isLocked && lockedMaterial != null)
@@ -229,9 +290,9 @@ namespace InfimaGames.LowPolyShooterPack
         
         private void PlaySound(AudioClip clip)
         {
-            if (clip != null)
+            if (clip != null && audioSource != null)
             {
-                AudioSource.PlayClipAtPoint(clip, transform.position);
+                audioSource.PlayOneShot(clip);
             }
         }
         
