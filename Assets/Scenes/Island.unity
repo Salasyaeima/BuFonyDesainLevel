@@ -1424,14 +1424,14 @@ MonoBehaviour:
   destroyOnDeath: 1
   destroyDelay: 0
   target: {fileID: 1251695245}
-  detectionRange: 6.03
-  detectionAngle: 180
+  detectionRange: 13.13
+  detectionAngle: 360
   useLineOfSight: 1
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256
   attackRange: 1
-  chaseSpeed: 0.7
+  chaseSpeed: 3
   maxChaseDistance: 10
   attackDamage: 10
   attackCooldown: 3
@@ -25927,14 +25927,14 @@ MonoBehaviour:
   destroyOnDeath: 1
   destroyDelay: 0
   target: {fileID: 1251695245}
-  detectionRange: 6.03
-  detectionAngle: 180
+  detectionRange: 13.13
+  detectionAngle: 360
   useLineOfSight: 1
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256
   attackRange: 1
-  chaseSpeed: 0.7
+  chaseSpeed: 3
   maxChaseDistance: 10
   attackDamage: 10
   attackCooldown: 3
@@ -29334,14 +29334,14 @@ MonoBehaviour:
   destroyOnDeath: 1
   destroyDelay: 0
   target: {fileID: 1251695245}
-  detectionRange: 6.03
+  detectionRange: 13.13
   detectionAngle: 360
   useLineOfSight: 1
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256
   attackRange: 1
-  chaseSpeed: 0.7
+  chaseSpeed: 3
   maxChaseDistance: 10
   attackDamage: 10
   attackCooldown: 3
@@ -33512,14 +33512,14 @@ MonoBehaviour:
   destroyOnDeath: 1
   destroyDelay: 0
   target: {fileID: 1251695245}
-  detectionRange: 6.03
-  detectionAngle: 180
+  detectionRange: 13.13
+  detectionAngle: 360
   useLineOfSight: 1
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256
   attackRange: 1
-  chaseSpeed: 0.7
+  chaseSpeed: 3
   maxChaseDistance: 10
   attackDamage: 10
   attackCooldown: 3
@@ -60627,14 +60627,14 @@ MonoBehaviour:
   destroyOnDeath: 1
   destroyDelay: 0
   target: {fileID: 1251695245}
-  detectionRange: 6.03
-  detectionAngle: 180
+  detectionRange: 13.13
+  detectionAngle: 360
   useLineOfSight: 1
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256
   attackRange: 1
-  chaseSpeed: 0.7
+  chaseSpeed: 3
   maxChaseDistance: 10
   attackDamage: 10
   attackCooldown: 3
@@ -63789,14 +63789,14 @@ MonoBehaviour:
   destroyOnDeath: 1
   destroyDelay: 0
   target: {fileID: 1251695245}
-  detectionRange: 6.03
-  detectionAngle: 180
+  detectionRange: 13.13
+  detectionAngle: 360
   useLineOfSight: 1
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256
   attackRange: 1
-  chaseSpeed: 0.7
+  chaseSpeed: 3
   maxChaseDistance: 10
   attackDamage: 10
   attackCooldown: 3
@@ -67445,14 +67445,14 @@ MonoBehaviour:
   destroyOnDeath: 1
   destroyDelay: 0
   target: {fileID: 1251695245}
-  detectionRange: 6.03
-  detectionAngle: 180
+  detectionRange: 13.13
+  detectionAngle: 360
   useLineOfSight: 1
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256
   attackRange: 1
-  chaseSpeed: 0.7
+  chaseSpeed: 3
   maxChaseDistance: 10
   attackDamage: 10
   attackCooldown: 3
@@ -88043,14 +88043,14 @@ MonoBehaviour:
   destroyOnDeath: 1
   destroyDelay: 0
   target: {fileID: 1251695245}
-  detectionRange: 6.03
-  detectionAngle: 180
+  detectionRange: 13.13
+  detectionAngle: 360
   useLineOfSight: 1
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256
   attackRange: 1
-  chaseSpeed: 0.7
+  chaseSpeed: 3
   maxChaseDistance: 10
   attackDamage: 10
   attackCooldown: 3
@@ -102780,14 +102780,14 @@ MonoBehaviour:
   destroyOnDeath: 1
   destroyDelay: 0
   target: {fileID: 1251695245}
-  detectionRange: 6.03
-  detectionAngle: 180
+  detectionRange: 13.13
+  detectionAngle: 360
   useLineOfSight: 1
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256
   attackRange: 1
-  chaseSpeed: 0.7
+  chaseSpeed: 3
   maxChaseDistance: 10
   attackDamage: 10
   attackCooldown: 3
@@ -104082,14 +104082,14 @@ MonoBehaviour:
   destroyOnDeath: 1
   destroyDelay: 0
   target: {fileID: 1251695245}
-  detectionRange: 6.03
+  detectionRange: 13.13
   detectionAngle: 360
   useLineOfSight: 1
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256
   attackRange: 1
-  chaseSpeed: 0.7
+  chaseSpeed: 3
   maxChaseDistance: 10
   attackDamage: 10
   attackCooldown: 3
@@ -104705,14 +104705,14 @@ MonoBehaviour:
   destroyOnDeath: 1
   destroyDelay: 0
   target: {fileID: 1251695245}
-  detectionRange: 6.03
-  detectionAngle: 180
+  detectionRange: 13.13
+  detectionAngle: 360
   useLineOfSight: 1
   obstacleMask:
     serializedVersion: 2
     m_Bits: 256
   attackRange: 1
-  chaseSpeed: 0.7
+  chaseSpeed: 3
   maxChaseDistance: 10
   attackDamage: 10
   attackCooldown: 3
